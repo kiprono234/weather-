@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from "react";
+import WeatherProvider, { WeatherContext } from "./context/WeatherProvider";
+import Header from "./components/Header";
+import WeatherCard from "./components/WeatherCard";
+import LocationDetector from "./components/LocationDetector";
+import ForecastList from "./components/ForecastList";
+import "./App.scss";
+
+const Main = () => {
+  const { searchWeather, getWeatherByLocation, forecast } = useContext(WeatherContext);
+
+  return (
+    <div className="weather-app-bg">
+      <div>
+        <Header onSearch={searchWeather} />
+        <LocationDetector onDetect={getWeatherByLocation} />
+        <WeatherCard />
+        <ForecastList forecast={forecast} />
+      </div>
+    </div>
+  );
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <WeatherProvider>
+      <Main />
+    </WeatherProvider>
   );
 }
 

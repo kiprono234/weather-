@@ -1,0 +1,28 @@
+.forecast-card {
+    background: #1790cf;
+    border-radius: 18px;
+    color: #fff;
+    padding: 1rem 1.2rem;
+    min-width: 110px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  
+    .forecast-day {
+      font-weight: bold;
+      font-size: 1.1em;
+      margin-bottom: 0.2em;
+    }
+    .forecast-icon img {
+      width: 36px;
+      height: 36px;
+    }
+    .forecast-temp-main {
+      font-size: 1.6em;
+      font-weight: bold;
+    }
+    .forecast-temp-range {
+      font-size: 1em;
+      opacity: 0.8;
+      margin-top: 0.1em;
+    }
+  }
